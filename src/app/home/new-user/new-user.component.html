@@ -3,28 +3,22 @@
 <form class="form mt-4" [formGroup]="newUserForm" (submit)="register()">
   <div class="form-group">
     <input placeholder="e-mail" class="form-control" formControlName="email" />
+    <app-message *ngIf="newUserForm.get('email')?.errors?.required && newUserForm.get('email')?.touched"
+      message="Email Obrigatório">
+    </app-message>
+    <app-message *ngIf="newUserForm.get('email')?.errors?.email && newUserForm.get('email')?.touched" message="Email Inválido">
+    </app-message>
   </div>
   <div class="form-group">
-    <input
-      placeholder="Nome Completo"
-      class="form-control"
-      formControlName="fullName"
-    />
+    <input placeholder="Nome Completo" class="form-control" formControlName="fullName" />
+    <app-message *ngIf="newUserForm.get('fullName')?.errors && newUserForm.get('fullName')?.touched" message="Email Inválido">
+    </app-message>
   </div>
   <div class="form-group">
-    <input
-      placeholder="Usuário"
-      class="form-control"
-      formControlName="userName"
-    />
+    <input placeholder="Usuário" class="form-control" formControlName="userName" />
   </div>
   <div class="form-group">
-    <input
-      type="password"
-      placeholder="Senha"
-      class="form-control"
-      formControlName="password"
-    />
+    <input type="password" placeholder="Senha" class="form-control" formControlName="password" />
   </div>
 
   <button class="btn btn-primary btn-block">Cadastro</button>

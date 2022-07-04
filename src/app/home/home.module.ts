@@ -10,8 +10,13 @@ import { MessageModule } from '../components/message/message.module';
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent, NewUserComponent],
-  imports: [CommonModule, HomeRoutingModule, FormsModule, MessageModule,
-    ReactiveFormsModule,],
+  imports: [
+    CommonModule, 
+    HomeRoutingModule, 
+    FormsModule, 
+    MessageModule,
+    ReactiveFormsModule,
+  ],
   exports: [HomeComponent],
 })
 export class HomeModule { }
