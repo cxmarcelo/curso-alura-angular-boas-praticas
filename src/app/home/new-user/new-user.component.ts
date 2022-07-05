@@ -4,6 +4,7 @@ import { lowercaseValidator } from './lowercase.validator';
 import { NewUser } from './new-user';
 import { NewUserService } from './new-user.service';
 import { UserExistsService } from './user-exists.service';
+import { userEqualsPasswordValidator } from './user-password-equals.validator';
 
 @Component({
   selector: 'app-new-user',
@@ -18,7 +19,7 @@ export class NewUserComponent implements OnInit {
     private formBuilder: FormBuilder,
     private newUserService: NewUserService,
     private userExistsService: UserExistsService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group({
@@ -26,7 +27,7 @@ export class NewUserComponent implements OnInit {
       fullName: ['', Validators.required, Validators.minLength(4)],
       userName: ['', [lowercaseValidator], [this.userExistsService.userExists()]],
       password: [''],
-    }, []);
+    }, { validator: [userEqualsPasswordValidator] });
   }
 
   register() {
