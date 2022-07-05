@@ -9,8 +9,11 @@ export class NewUserService {
 
   constructor(private http: HttpClient) {}
 
-  cadastraNovoUsuario(newUser: NewUser) {
+  registerNewUser(newUser: NewUser) {
     return this.http.post('http://localhost:3000/user/signup', newUser);
   }
 
+  verifyUserExist(username: string) {
+    return this.http.get(`http://localhost:3000/user/exists/${username}`);
+  }
 }
