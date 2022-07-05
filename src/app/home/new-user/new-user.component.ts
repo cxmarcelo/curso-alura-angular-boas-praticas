@@ -29,7 +29,7 @@ export class NewUserComponent implements OnInit {
       fullName: ['', Validators.required, Validators.minLength(4)],
       userName: ['', [lowercaseValidator], [this.userExistsService.userExists()]],
       password: [''],
-    }, { validator: [userEqualsPasswordValidator] });
+    }, {validators: [userEqualsPasswordValidator]});
   }
 
   register() {

@@ -23,7 +23,7 @@
   </div>
   <div class="form-group">
     <input type="password" placeholder="Senha" class="form-control" formControlName="password" />
-    <app-message *ngIf="newUserForm.error?.usernameEqualsPassword" message="Usuário e senha não podem ser iguais.">
+    <app-message *ngIf="newUserForm.errors?.userEqualsPass" message="Usuário e senha não podem ser iguais.">
     </app-message>
   </div>
 
