@@ -13,8 +13,8 @@ export class AuthenticationService {
     private userService: UserService) {
   }
 
-  public authentication(username: string, password: string): Observable<HttpResponse<any>> {
-    return this.httpClient.post("http://locahost:3000/user/login", {username, password}, {observe: 'response'})
+  public authentication(userName: string, password: string): Observable<HttpResponse<any>> {
+    return this.httpClient.post("http://localhost:3000/user/login", {userName, password}, {observe: 'response'})
     .pipe(
       tap((res) => {
         const authToken = res.headers.get("x-access-token") ?? "";
@@ -22,4 +22,5 @@ export class AuthenticationService {
       })
     )
   }
+
 }
