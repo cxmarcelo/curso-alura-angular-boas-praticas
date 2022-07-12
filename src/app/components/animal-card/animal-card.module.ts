@@ -5,10 +5,14 @@ import { AnimalCardComponent } from './animal-card.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AnimalCardComponent
+  ],
   imports: [
     CommonModule
   ],
-  exports: [AnimalCardComponent]
+  exports: [
+    AnimalCardComponent
+  ]
 })
 export class AnimalCardModule { }

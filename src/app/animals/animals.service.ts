@@ -14,7 +14,7 @@ export class AnimalsService {
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  public listUsers(username: string): Observable<Animals> {
+  public listAnimalsByUser(username: string): Observable<Animals> {
     const token = this.tokenService.getToken();
     const headers = new HttpHeaders().append("x-access-token", token);
     return this.http.get<Animals>(`${API}/${username}/photos`, {headers});
