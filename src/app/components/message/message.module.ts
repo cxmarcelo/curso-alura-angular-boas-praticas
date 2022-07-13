@@ -5,10 +5,14 @@ import { MessageComponent } from './message.component';
 
 
 @NgModule({
-  declarations: [MessageComponent],
-  imports: [
-    CommonModule
+  declarations: [
+    MessageComponent,
   ],
-  exports: [MessageComponent]
+  imports: [
+    CommonModule,
+  ],
+  exports: [
+    MessageComponent,
+  ]
 })
 export class MessageModule { }
