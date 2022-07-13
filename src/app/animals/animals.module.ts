@@ -9,6 +9,7 @@ import { AnimalCardModule } from '../components/animal-card/animal-card.module';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import { CommentsComponent } from './animal-detail/comments/comments.component';
 import { SharedModule } from '../shared/shared.module';
+import { NewAnimalComponent } from './new-animal/new-animal.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     AnimalComponent, 
     AnimalsGridComponent, 
     AnimalDetailComponent, 
-    CommentsComponent,
+    CommentsComponent, NewAnimalComponent,
     
   ],
   imports: [
